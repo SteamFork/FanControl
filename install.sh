@@ -17,9 +17,9 @@ sudo rm -rf $HOME/homebrew/plugins/FanControl
 
 echo "installing FanControl plugin for TDP control"
 
-FINAL_URL='https://api.github.com/repos/aarron-lee/FanControl/releases/latest'
+FINAL_URL='https://api.github.com/repos/fewtarius/FanControl/releases/latest'
 if [ $VERSION != "LATEST" ] ; then
-  FINAL_URL="https://api.github.com/repos/aarron-lee/FanControl/releases/tags/${VERSION}"
+  FINAL_URL="https://api.github.com/repos/fewtarius/FanControl/releases/tags/${VERSION}"
 fi
 
 echo $FINAL_URL
