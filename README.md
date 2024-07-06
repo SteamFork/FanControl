@@ -5,7 +5,7 @@ Powercontrol fork modified to present fan controls only.  Intended for use with 
 # Quick Install
 
 ```
-curl -L https://github.com/fewtarius/FanControl/raw/main/install.sh | sh
+curl -L https://github.com/SteamFork/FanControl/raw/main/install.sh | sh
 ```
 
 # Attribution
