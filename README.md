@@ -1,6 +1,6 @@
 # FanControl Fork
 
-Powercontrol fork modified to present fan controls only for GPD devices.
+Powercontrol fork modified to present fan controls only.  Intended for use with GPD devices.
 
 # Quick Install
 
