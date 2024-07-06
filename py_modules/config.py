@@ -3,7 +3,7 @@ import glob
 import decky_plugin
 
 #日志配置
-LOG_LOCATION = "/tmp/PowerControl_py.log"
+LOG_LOCATION = "/tmp/FanControl_py.log"
 logging.basicConfig(
     level = logging.INFO,
     filename = LOG_LOCATION,
@@ -14,8 +14,8 @@ logging.basicConfig(
 #路径配置
 try:
     HOMEBREW_PATH = f'{decky_plugin.DECKY_USER_HOME}/homebrew'   
-    SH_PATH="{}/plugins/PowerControl/backend/sh_tools.sh".format(HOMEBREW_PATH)
-    RYZENADJ_PATH="{}/plugins/PowerControl/bin/ryzenadj".format(HOMEBREW_PATH)
+    SH_PATH="{}/plugins/FanControl/backend/sh_tools.sh".format(HOMEBREW_PATH)
+    RYZENADJ_PATH="{}/plugins/FanControl/bin/ryzenadj".format(HOMEBREW_PATH)
     GPU_DEVICE_PATH = glob.glob("/sys/class/drm/card?/device")[0]
     GPUFREQ_PATH = "{}/pp_od_clk_voltage".format(GPU_DEVICE_PATH)
     GPULEVEL_PATH = "{}/power_dpm_force_performance_level".format(GPU_DEVICE_PATH)
@@ -32,9 +32,9 @@ try:
 except Exception as e:
     logging.error(f"设备信息配置异常|{e}")
 
-API_URL = "https://api.github.com/repos/aarron-lee/PowerControl/releases/latest"
+API_URL = "https://api.github.com/repos/aarron-lee/FanControl/releases/latest"
 
-CONFIG_KEY = "PowerControl"
+CONFIG_KEY = "FanControl"
 
 #TDP上限配置
 try:

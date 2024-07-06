@@ -57,8 +57,8 @@ export default definePlugin((serverAPI: ServerAPI) => {
   }
 
   return {
-    title: <div className={staticClasses.Title}>PowerControl</div>,
-    titleView: <QuickAccessTitleView title={"PowerControl"} />,
+    title: <div className={staticClasses.Title}>FanControl</div>,
+    titleView: <QuickAccessTitleView title={"FanControl"} />,
     content: <Content />,
     icon: <FaSuperpowers />,
     onDismount() {

@@ -29,18 +29,18 @@ jobs:
           npm i -g pnpm@8.5.1
           pnpm install --no-frozen-lockfile
           pnpm run build
-          tar -czvf PowerControl.tar.gz --transform 's,^,PowerControl/,' dist backend bin py_modules *.py *.json *.md *.js LICENSE
+          tar -czvf FanControl.tar.gz --transform 's,^,FanControl/,' dist backend bin py_modules *.py *.json *.md *.js LICENSE
         continue-on-error: true
 
       - name: show files
         run: |
-          tar -tzvf PowerControl.tar.gz
+          tar -tzvf FanControl.tar.gz
 
       - name: Publish Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: PowerControl
-          path: PowerControl.tar.gz
+          name: FanControl
+          path: FanControl.tar.gz
 
   publish:
     if: startsWith(github.ref, 'refs/tags/v')
@@ -59,10 +59,10 @@ jobs:
       - name: publish to github release
         uses: softprops/action-gh-release@v1
         with:
-          files: /tmp/artifacts/PowerControl/PowerControl.tar.gz
+          files: /tmp/artifacts/FanControl/FanControl.tar.gz
           tag_name: ${{ github.ref_name }}
           body: |
-            PowerControl
+            FanControl
           draft: false
           prerelease: contains(github.ref, 'pre')
         env:

@@ -27,7 +27,7 @@ class Plugin:
         return True
 
     async def _unload(self):
-        logging.info("End PowerControl")
+        logging.info("End FanControl")
 
     async def get_hasRyzenadj(self):
         try:

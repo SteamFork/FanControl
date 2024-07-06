@@ -77,7 +77,7 @@ function set_cpu_tdp()
     let slow=$2*1000
     let fast=$3*1000
     sudo $ryzenadj_path --stapm-limit=$fast --fast-limit=$fast --slow-limit=$fast --tctl-temp=90
-    sudo echo "${ryzenadj_path}  --stapm-limit=${fast} --fast-limit=${fast}   --slow-limit=${slow}" >>  /tmp/powerControl_sh.log
+    sudo echo "${ryzenadj_path}  --stapm-limit=${fast} --fast-limit=${fast}   --slow-limit=${slow}" >>  /tmp/fanControl_sh.log
 }
 
 # not need
@@ -93,7 +93,7 @@ function set_clock_limits()
         sudo echo "s 1 ${max}" > "${gpu_device}/pp_od_clk_voltage"
         sudo echo "c" > "${gpu_device}/pp_od_clk_voltage"
     fi
-    sudo echo "gpu_clock_limit "$1 $2 >> /tmp/powerControl_sh.log
+    sudo echo "gpu_clock_limit "$1 $2 >> /tmp/fanControl_sh.log
 }
 
 # not need
@@ -122,7 +122,7 @@ function set_gpu_flk()
     else
         sudo echo "$index" > "${gpu_device}/pp_dpm_fclk"
     fi
-    sudo echo "gpu_flk_limit " $index >> /tmp/powerControl_sh.log
+    sudo echo "gpu_flk_limit " $index >> /tmp/fanControl_sh.log
 }
 
 # 忽略
@@ -187,6 +187,6 @@ function get_language()
     get_language)get_language $2;;
     get_gpuFreqMin)get_gpuFreqMin;;
     get_gpuFreqMax)get_gpuFreqMax;;
-    *)sudo echo $1 $2 $3 $4>>  /tmp/powerControl_sh.log;;
+    *)sudo echo $1 $2 $3 $4>>  /tmp/fanControl_sh.log;;
     esac
 fi
